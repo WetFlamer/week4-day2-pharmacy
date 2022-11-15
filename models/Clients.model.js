@@ -6,8 +6,7 @@ const clientsScheme = {
  basket: [{
     ref: 'medicines',
     type: mongoose.SchemaTypes.ObjectId,
-    finalprice: Number
- }],
+}],
  recipe: Boolean
 }
 
