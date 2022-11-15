@@ -45,6 +45,9 @@ module.exports = clientsController = {
             return sum + drug.price
         }, 0)
         const sprice = user.balance - finalSum
+        if(user.balance < finalSum){
+            return res.json('Недостаточно средств')
+        }
         await Clients.findByIdAndUpdate(req.params.clientId, {
             $set: {basket: [], balance: sprice},
         })
